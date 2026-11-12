@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APEX ISO WHEY PROTEIN | بروتين النقاء الفائق</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0f1d;
+            --bg-card: #131b31;
+            --primary: #00d2ff;
+            --accent: #d4af37;
+            --text-main: #ffffff;
+            --text-muted: #94a3b8;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        /* Top Bar & Lang Switcher */
+        header {
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: var(--primary);
+        }
+
+        .lang-btn {
+            background: rgba(0, 210, 255, 0.1);
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .lang-btn:hover {
+            background: var(--primary);
+            color: var(--bg-dark);
+        }
+
+        /* Main Container */
+        .container {
+            width: 100%;
+            max-width: 500px;
+            padding: 0 20px 40px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        /* Hero Product Card */
+        .hero-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(0, 210, 255, 0.2);
+            border-radius: 24px;
+            padding: 24px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        .product-badge {
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--accent);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        .product-title {
+            font-size: 26px;
+            font-weight: 900;
+            margin-bottom: 6px;
+        }
+
+        .product-subtitle {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        /* Visual Sachet Representation */
+        .sachet-mockup {
+            background: linear-gradient(135deg, #0d1527, #1a2744);
+            border: 2px solid var(--primary);
+            border-radius: 16px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: inset 0 0 15px rgba(0, 210, 255, 0.2);
+            position: relative;
+        }
+
+        .sachet-brand {
+            font-size: 22px;
+            font-weight: 900;
+            color: var(--primary);
+            letter-spacing: 1px;
+        }
+
+        .sachet-name {
+            font-size: 16px;
+            font-weight: 700;
+            color: #fff;
+            margin: 4px 0 12px 0;
+        }
+
+        .sachet-flavor {
+            display: inline-block;
+            border-bottom: 2px solid var(--accent);
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 14px;
+            padding-bottom: 2px;
+            margin-bottom: 15px;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .stat-box {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 10px 5px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stat-num {
+            font-size: 15px;
+            font-weight: 900;
+            color: var(--primary);
+        }
+
+        .stat-label {
+            font-size: 10px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        /* Flavor Selector */
+        .section-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-align: right;
+        }
+        [dir="ltr"] .section-title {
+            text-align: left;
+        }
+
+        .options-group {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .option-btn {
+            background: var(--bg-card);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-main);
+            padding: 10px;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .option-btn.active {
+            border-color: var(--primary);
+            background: rgba(0, 210, 255, 0.15);
+            color: var(--primary);
+        }
+
+        /* Calculator Card */
+        .calc-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .quantity-control {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .qty-btns {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .qty-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: #fff;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .qty-btn:hover {
+            background: var(--primary);
+            color: var(--bg-dark);
+        }
+
+        .qty-display {
+            font-size: 18px;
+            font-weight: 700;
+            min-width: 30px;
+            text-align: center;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 12px;
+        }
+
+        .total-price {
+            font-size: 22px;
+            font-weight: 900;
+            color: var(--accent);
+        }
+
+        /* Order Button */
+        .order-btn {
+            background: #25d366;
+            color: white;
+            border: none;
+            border-radius: 16px;
+            padding: 16px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .order-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            font-size: 12px;
+            color: var(--text-muted);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-text">APEX</div>
+        <button class="lang-btn" id="langToggle" onclick="toggleLanguage()">English</button>
+    </header>
+
+    <div class="container">
+        <!-- Hero Product Section -->
+        <div class="hero-card">
+            <span class="product-badge" data-i18n="badge">مكمل غذائي عالي النقاء</span>
+            <h1 class="product-title">ISO WHEY PROTEIN</h1>
+            <p class="product-subtitle" data-i18n="subtitle">أظرف فردية سريعة التحضير للاستخدام اليومي</p>
+            
+            <div class="sachet-mockup">
+                <div class="sachet-brand">APEX</div>
+                <div class="sachet-name">ISO WHEY PROTEIN</div>
+                <div class="sachet-flavor" id="currentFlavorText">شوكولاتة داكنة (DEEP CHOCOLATE)</div>
+                
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <div class="stat-num">26G</div>
+                        <div class="stat-label" data-i18n="p_prot">بروتين</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-num">5G</div>
+                        <div class="stat-label" data-i18n="p_creat">كرياتين</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-num">5.5G</div>
+                        <div class="stat-label" data-i18n="p_bcaa">BCAAs</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Flavor Selection -->
+        <div>
+            <div class="section-title" data-i18n="flavor_title">اختر النكهة المفضلة لديك:</div>
+            <div class="options-group">
+                <button class="option-btn active" onclick="selectFlavor('chocolate', this)" data-i18n="f_choc">شوكولاتة</button>
+                <button class="option-btn" onclick="selectFlavor('vanilla', this)" data-i18n="f_van">فانيليا</button>
+                <button class="option-btn" onclick="selectFlavor('coffee', this)" data-i18n="f_cof">قهوة</button>
+            </div>
+        </div>
+
+        <!-- Calculator Card -->
+        <div class="calc-card">
+            <div class="section-title" data-i18n="qty_title">حدد الكمية المطلوبة (أظرف):</div>
+            
+            <div class="quantity-control">
+                <span style="font-weight: 600; color: var(--text-muted);" data-i18n="sachets_count">عدد الأظرف:</span>
+                <div class="qty-btns">
+                    <button class="qty-btn" onclick="changeQty(-5)">-</button>
+                    <span class="qty-display" id="qtyDisplay">10</span>
+                    <button class="qty-btn" onclick="changeQty(5)">+</button>
+                </div>
+            </div>
+
+            <div class="price-row">
+                <span style="font-weight: 600;" data-i18n="total_label">الإجمالي المتوقع:</span>
+                <span class="total-price" id="totalPrice">20.00 $</span>
+            </div>
+
+            <button class="order-btn" onclick="sendOrderToWhatsApp()">
+                <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                <span data-i18n="order_btn">اطلب الآن عبر واتساب</span>
+            </button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 APEX Supplements. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let currentLang = 'ar';
+        let selectedFlavorName = { ar: 'شوكولاتة داكنة', en: 'Deep Chocolate' };
+        let quantity = 10;
+        const pricePerUnit = 2.0; // سعر الظرف الواحد بالدولار
+
+        const translations = {
+            ar: {
+                badge: 'مكمل غذائي عالي النقاء',
+                subtitle: 'أظرف فردية سريعة التحضير للاستخدام اليومي',
+                p_prot: 'بروتين',
+                p_creat: 'كرياتين',
+                p_bcaa: 'BCAAs',
+                flavor_title: 'اختر النكهة المفضلة لديك:',
+                f_choc: 'شوكولاتة',
+                f_van: 'فانيليا',
+                f_cof: 'قهوة',
+                qty_title: 'حدد الكمية المطلوبة (أظرف):',
+                sachets_count: 'عدد الأظرف:',
+                total_label: 'الإجمالي المتوقع:',
+                order_btn: 'اطلب الآن عبر واتساب',
+                flavors: { chocolate: 'شوكولاتة داكنة', vanilla: 'فانيليا ناعمة', coffee: 'إسبريسو قهوة' }
+            },
+            en: {
+                badge: 'High Purity Supplement',
+                subtitle: 'Single serving easy-to-pour packets',
+                p_prot: 'PROTEIN',
+                p_creat: 'CREATINE',
+                p_bcaa: 'BCAAs',
+                flavor_title: 'Select Your Favorite Flavor:',
+                f_choc: 'Chocolate',
+                f_van: 'Vanilla',
+                f_cof: 'Coffee',
+                qty_title: 'Select Quantity (Sachets):',
+                sachets_count: 'Sachets Count:',
+                total_label: 'Total Estimated:',
+                order_btn: 'Order Now via WhatsApp',
+                flavors: { chocolate: 'Deep Chocolate', vanilla: 'Smooth Vanilla', coffee: 'Espresso Coffee' }
+            }
+        };
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            const html = document.documentElement;
+            html.setAttribute('lang', currentLang);
+            html.setAttribute('dir', currentLang === 'ar' ? 'r-l' : 'ltr');
+            document.getElementById('langToggle').innerText = currentLang === 'ar' ? 'English' : 'عربي';
+            
+            // Update static texts
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    el.innerText = translations[currentLang][key];
+                }
+            });
+            updateFlavorDisplay();
+        }
+
+        function selectFlavor(flavorKey, btnElement) {
+            document.querySelectorAll('.option-btn').forEach(b => b.classList.remove('active'));
+            btnElement.classList.add('active');
+            selectedFlavorName.ar = translations.ar.flavors[flavorKey];
+            selectedFlavorName.en = translations.en.flavors[flavorKey];
+            updateFlavorDisplay();
+        }
+
+        function updateFlavorDisplay() {
+            const activeKey = currentLang === 'ar' ? selectedFlavorName.ar : selectedFlavorName.en;
+            document.getElementById('currentFlavorText').innerText = `APEX - ISO WHEY (${activeKey})`;
+        }
+
+        function changeQty(amount) {
+            quantity += amount;
+            if (quantity < 5) quantity = 5;
+            if (quantity > 100) quantity = 100;
+            document.getElementById('qtyDisplay').innerText = quantity;
+            
+            let total = quantity * pricePerUnit;
+            document.getElementById('totalPrice').innerText = total.toFixed(2) + ' $';
+        }
+
+        function sendOrderToWhatsApp() {
+            const flavor = currentLang === 'ar' ? selectedFlavorName.ar : selectedFlavorName.en;
+            const phone = "96170000000"; // استبدل هذا الرقم برقم هاتفك مع رمز الدولة
+            
+            let message = "";
+            if (currentLang === 'ar') {
+                message = `مرحباً، أرغب بطلب منتج APEX ISO WHEY:\n- النكهة: ${flavor}\n- عدد الأظرف: ${quantity}\n- السعر الإجمالي: ${(quantity * pricePerUnit).toFixed(2)}$`;
+            } else {
+                message = `Hello, I would like to order APEX ISO WHEY:\n- Flavor: ${flavor}\n- Quantity: ${quantity} sachets\n- Total Price: ${(quantity * pricePerUnit).toFixed(2)}$`;
+            }
+            
+            const encodedUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+            window.open(encodedUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
